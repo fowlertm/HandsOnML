@@ -31,10 +31,10 @@ knn.fit(X_train, y_train)
 
 # Validating it.
 
-# print('Train Score', knn.score(X_train, y_train))
-# print('Test Score', knn.score(X_test, y_test))
+print('Train Score', knn.score(X_train, y_train))
+print('Test Score', knn.score(X_test, y_test))
 
-# print(knn.predict_proba(X_test)[:9])
+print(knn.predict_proba(X_test)[:9])
 
 param_grid = {
     'n_neighbors': [3,4, 5,7,9],
@@ -48,6 +48,7 @@ gs = GridSearchCV(knn,
                   cv=5
     )
 gs_results = gs.fit(X_train, y_train)
+
 print(gs_results.best_params_) # -- > Outputs the best model parameters
 print(gs_results.best_score_) #  -- > Outputs the best score
 
